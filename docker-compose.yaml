@@ -1,0 +1,18 @@
+version: '3.8'
+#
+# После запуска контейнера введите команду:
+# docker logs jupiter
+# Там будет строка подключения с токеном, типа:
+# http://127.0.0.1:8888/lab?token=текущий_токен
+#
+services:
+  jupiter:
+    image: alexsuf/jupyter
+    container_name: jupyter
+    restart: always
+    environment:
+      TZ: Europe/Moscow
+    ports:
+      - 8888:8888
+    volumes:
+      - ./work:/home/jovyan/work
