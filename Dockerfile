@@ -99,6 +99,7 @@ RUN julia -e 'import Pkg; Pkg.update()' && \
     fix-permissions "${JULIA_PKGDIR}" "${CONDA_DIR}/share/jupyter"
 
 RUN pip install tensorflow
-RUN pip install pyTelegramBotAPI
+RUN pip install psycopg2-binary
+RUN pip install flask
 
 WORKDIR "${HOME}"
